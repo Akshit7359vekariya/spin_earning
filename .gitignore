@@ -22,14 +22,22 @@ migrate_working_dir/
 #.vscode/
 
 # Flutter/Dart/Pub related
-**/doc/api/
-**/ios/Flutter/.last_build_id
 .dart_tool/
-.flutter-plugins
-.flutter-plugins-dependencies
+.packages
 .pub-cache/
-.pub/
-/build/
+build/
+ios/Pods/
+ios/.symlinks/
+android/.gradle/
+android/app/build/
+*.iml
+.idea/
+.vscode
+
+# Firebase
+*.keystore
+google-services.json
+firebase_options.dart
 
 # Symbolication related
 app.*.symbols
