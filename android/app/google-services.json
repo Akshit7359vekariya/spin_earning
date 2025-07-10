@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "327212509966",
+    "project_id": "spin-to-earn-992fa",
+    "storage_bucket": "spin-to-earn-992fa.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:327212509966:android:1c3750a6cc3cd597a9855f",
+        "android_client_info": {
+          "package_name": "com.example.spin_earning"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "327212509966-9l6j8g9jhvdn9q9ik8ljqs4dkqhfci4v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjfObGGu1OBwCdM8keYdNV1yIopRGcHTs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "327212509966-9l6j8g9jhvdn9q9ik8ljqs4dkqhfci4v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

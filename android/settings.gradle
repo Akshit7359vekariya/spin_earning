@@ -1,0 +1,56 @@
+// android/settings.gradle
+import org.gradle.api.GradleException
+
+pluginManagement {
+    def flutterSdkPathFromLocalProperties = {
+        def localPropsFile = rootProject.file("local.properties")
+        println "DEBUG: Checking for local.properties at: ${localPropsFile.absolutePath}"
+        if (!localPropsFile.exists()) {
+            println "DEBUG: local.properties does NOT exist!"
+            return null
+        }
+        def properties = new Properties()
+        localPropsFile.withInputStream { properties.load(it) }
+        def sdkPath = properties.getProperty("flutter.sdk")
+        println "DEBUG: flutter.sdk from local.properties: '${sdkPath}'"
+        if (sdkPath == null || sdkPath.trim().isEmpty()) {
+            println "DEBUG: flutter.sdk is null or empty!"
+            return null
+        }
+        def sdkDir = new File(sdkPath)
+        if (!sdkDir.exists() || !sdkDir.isDirectory()) {
+            println "DEBUG: flutter.sdk path is invalid: '${sdkPath}'"
+        }
+        return sdkPath
+    }()
+
+    if (flutterSdkPathFromLocalProperties == null) {
+        throw new GradleException("DEBUG: flutterSdkPathFromLocalProperties is null. Check local.properties.")
+    }
+
+    println "DEBUG: Using Flutter SDK path: '${flutterSdkPathFromLocalProperties}'"
+
+    includeBuild("${flutterSdkPathFromLocalProperties}/packages/flutter_tools/gradle")
+
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+plugins {
+    id "dev.flutter.flutter-gradle-plugin" version "managedByFlutter"
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.name = "your_project_name"
+include ":app"
+apply from: "${settings.pluginManagement.includeBuild.single().projectDir}/flutter_settings.gradle"
