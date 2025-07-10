@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # spin_earning
 
 A new Flutter project.
@@ -14,3 +15,6 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+=======
+# spin_earning
+>>>>>>> f917f00d7f1613485e532e49922a3a7708597f28
